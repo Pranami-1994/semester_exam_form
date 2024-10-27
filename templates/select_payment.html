@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #007bff, #ffcc00);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+        .container {
+            padding: 30px;
+            width: 40%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border: 2px solid #007bff; /* Added border for a college-like feel */
+        }
+        h1 {
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.5em; /* Increased font size for a prominent title */
+            color: #007bff; /* Blue color for the title */
+            text-transform: uppercase; /* Uppercase for a formal look */
+        }
+        .payment-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .payment-option {
+            margin-bottom: 20px;
+            width: 80%;
+            display: flex; /* Use flexbox for better alignment */
+            align-items: center;
+        }
+        .payment-option input {
+            margin-right: 15px; /* Space between radio and label */
+            accent-color: #007bff; /* Custom color for radio buttons */
+        }
+        .payment-option label {
+            font-size: 1.2em; /* Increased font size for readability */
+        }
+        .confirm-btn {
+            display: block;
+            width: 80%;
+            padding: 15px;
+            background-color: #007bff; /* Primary color for buttons */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.5em; /* Larger font for buttons */
+            cursor: pointer;
+            text-align: center;
+            margin: 25px auto; /* Center the button */
+            transition: background-color 0.3s ease;
+        }
+        .confirm-btn:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Select Payment Method</h1>
+
+    <!-- Form starts here -->
+    <form action="{{ url_for('confirm_payment') }}" method="POST">
+        <div class="payment-details">
+            <!-- Payment option: Credit Card -->
+            <div class="payment-option">
+                <input type="radio" id="credit-card" name="payment" value="credit-card" checked>
+                <label for="credit-card">Credit Card</label>
+            </div>
+        
+            <!-- Payment option: Debit Card -->
+            <div class="payment-option">
+                <input type="radio" id="debit-card" name="payment" value="debit-card">
+                <label for="debit-card">Debit Card</label>
+            </div>
+        
+            <!-- Payment option: PayPal -->
+            <div class="payment-option">
+                <input type="radio" id="paypal" name="payment" value="paypal">
+                <label for="paypal">PayPal</label>
+            </div>
+        
+            <!-- Payment option: Net Banking -->
+            <div class="payment-option">
+                <input type="radio" id="net-banking" name="payment" value="net-banking">
+                <label for="net-banking">Net Banking</label>
+            </div>
+        
+            <!-- Payment option: UPI -->
+            <div class="payment-option">
+                <input type="radio" id="upi" name="payment" value="upi">
+                <label for="upi">UPI</label>
+            </div>
+
+            <!-- Submit button to send form data -->
+            <button type="submit" class="confirm-btn">Confirm Payment</button>
+        </div>
+    </form>
+    <!-- Form ends here -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Selection - Horizon Valley University</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4a90e2, #8e44ad);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 50px auto;
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .form-section {
+            width: 60%;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #4a90e2; /* Primary color */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+            color: #333;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            color: #333;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50; /* Primary button color */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #43a047; /* Darker shade on hover */
+        }
+        .button-section {
+            width: 30%;
+            text-align: right;
+        }
+        .view-application-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+        .view-application-btn:hover {
+            background-color: #43a047;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h1>Select Your Exam Type</h1>
+            <form action="{{url_for('select_exam')}}" method="POST">
+                
+                <!-- Year Dropdown -->
+                <label for="year">Select Year:</label>
+                <select id="year" name="year" required>
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                </select>
+
+                <!-- Semester Dropdown -->
+                <label for="semester">Select Semester:</label>
+                <select id="semester" name="semester" required>
+                    <option value="1">1st Semester</option>
+                    <option value="2">2nd Semester</option>
+                </select>
+
+                <!-- Submit Button -->
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <!-- Button Section -->
+        <div class="button-section">
+            <!-- View Application Button -->
+            <a href="{{ url_for('submit_application_no') }}" class="view-application-btn">View Application</a>
+        </div>
+    </div>
+</body>
+</html>

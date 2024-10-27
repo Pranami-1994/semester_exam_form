@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Horizon Valley University</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://images.pexels.com/photos/29079280/pexels-photo-29079280/free-photo-of-people-in-front-of-istanbul-university-gate-with-flag.jpeg?auto=compress&cs=tinysrgb&w=600');
+            background-size: contain; /* Change from cover to contain */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Center the image */
+            background-color: black; /* Fallback color */
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+        .button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <h1>GlobalTech Institute of Engineering</h1>
+    <p>Your gateway to academic excellence.</p>
+    <a href="{{url_for('register')}}" class="button">Proceed</a>
+</body>
+</html>

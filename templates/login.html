@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #007bff, #28a745);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff; /* Default text color */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em; /* Increased font size for the title */
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            margin-bottom: 55px;
+            background-color: rgba(255, 255, 255, 0.9); /* Made background slightly more opaque */
+            border-radius: 15px; /* Increased border-radius for a softer look */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+        }
+        input[type="text"], input[type="password"] {
+            width: 90%;
+            padding: 14px; /* Increased padding for a more comfortable input */
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+        }
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Added box-shadow effect on focus */
+            outline: none;
+        }
+        .login-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 14px; /* Increased padding for buttons */
+            border: none;
+            border-radius: 5px;
+            width: 95%;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform for button */
+        }
+        .login-btn:hover {
+            background-color: #218838;
+            transform: scale(1.05); /* Slightly enlarge the button on hover */
+        }
+        .signup-link {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+            color: #007bff;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.3s ease; /* Added transition for color change */
+        }
+        .signup-link:hover {
+            text-decoration: underline;
+            color: #0056b3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="{{ url_for('login') }}" method="POST" onsubmit="return login()">
+            <input type="text" name="email" placeholder="Enter email" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <a href="{{ url_for('register') }}" class="signup-link">Don't have an account? Sign Up</a>
+    </div>
+
+    <script>
+        function login() {
+            return true;  // Prevent actual form submission for demo purposes
+        }
+    </script>
+</body>
+</html>

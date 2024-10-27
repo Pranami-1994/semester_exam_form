@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #007bff, #28a745);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 90%; /* Full width for responsiveness */
+            max-width: 500px; /* Maximum width for the container */
+            margin: 0 auto; /* Center the container */
+        }
+        h1 {
+            color: #333; /* Darker color for the heading */
+            margin-bottom: 20px; /* Space below the heading */
+        }
+        .details {
+            margin: 20px 0;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+            transition: transform 0.3s; /* Transition effect on hover */
+        }
+        .details:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: #28a745;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+        }
+        .button:hover {
+            background-color: #218838;
+            transform: translateY(-2px); /* Lift effect on button hover */
+        }
+        p {
+            margin: 10px 0; /* Space between paragraphs */
+            color: #555; /* Softer text color for better readability */
+        }
+        strong {
+            color: #333; /* Darker color for emphasis */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Application details</h1>
+        <div id="applicationdetails" class="details">
+
+            <p><strong>Application Number: </strong><span>{{application.application_number}}</span></p>
+            <p><strong>Roll No: </strong><span>{{application.rollno}}</span> </p>
+            <p><strong>Full Name of the Student: </strong><span>{{application.name}}</span></p>
+            <p><strong>Name of the Father: </strong><span>{{application.father}}</span> </p>
+            <p><strong>Name of the Mother: </strong><span>{{application.mother}}</span> </p>
+            <p><strong>Batch: </strong><span> {{application.batch}}</span> </p>
+            <p><strong>Specialization: </strong><span>{{application.department}}</span> </p>
+            
+            <p><strong>Year: </strong><span>{{application.year}}</span> </p>
+            <p><strong>Semester: </strong><span>{{application.semester}}</span> </p>
+            
+            <p><strong>Address of the Student: </strong><span>{{application.address}}</span> </p>
+            <p><strong>Email: </strong><span>{{application.email}}</span> </p>
+            <p><strong>Payment Amount: </strong><span>{{application.fee}}</span> </p>
+            <p><strong>Payment Status: </strong><span>{{application.payment_status}}</span> </p>
+            
+            </span></p>
+            
+        </div>
+        <!-- <a href="{{url_for('confirm_payment')}}" id="payment-btn" class="button">Proceed to Payment</a> -->
+    </div>
+</body>
+</html>

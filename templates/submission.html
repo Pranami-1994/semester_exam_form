@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Successful</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4CAF50, #2F8FED);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 32px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .application-number {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2F8FED;
+            margin-bottom: 30px;
+        }
+        .btn {
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #43a047;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Submission Successful!</h1>
+    <p>Thank you for completing the process. Your submission has been successfully received.</p>
+
+    <!-- Display the application number dynamically -->
+    <p>Your Application Number is:</p>
+    <div class="application-number">{{ application_number.app_num }}</div>
+
+    <p>Keep this application number safe for future reference.</p>
+
+    <!-- Button to view more details -->
+    <!-- <a href="{{ url_for('view_application') }}" class="btn">View Application Details</a> -->
+</div>
+
+</body>
+</html>
